@@ -31,12 +31,12 @@ void delete_node();
 
 void end();
 
-int main() {
+int main(int argc, char *argv[]) {
     struct timeb startTime, endTime;
     ftime(&startTime);
 
-    string filename1 = "1AJ3.pdb";
-    string filename2 = "1ec6A.pdb";
+    string filename1 = argv[1];
+    string filename2 = argv[2];
 
     row_mat = distanceMatrix(filename1, &nb_row);
     col_mat = distanceMatrix(filename2, &nb_col);
