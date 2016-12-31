@@ -1,11 +1,8 @@
+#include <cmath>
 #include <fstream>
-#include <string>
 #include <iostream>
-#include <sstream>
-#include <cstring>
-#include <cstdio>
-#include <math.h>
 #include <list>
+
 #include "distance_matrix.h"
 #include "algorithm_engineering.h"
 #include "edge_dali.h"

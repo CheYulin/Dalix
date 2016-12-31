@@ -5,23 +5,20 @@
 #include <cstring>
 #include <cstdio>
 #include <vector>
-#include <math.h>
+#include <cmath>
 #include <string>
 #include <cstdlib>
 
 using namespace std;
 
-string three_to_one_letter(string);
+string three_to_one_letter(string tlc);
 
 double **distanceMatrix(string filename1, int *nb_row) {
-    //��һ���ȳ�ʼ�����ֲ���
 
-    //Ҫ�����PDB�ļ�����Ϣ
     string filename(filename1);
     char chain('A');
     double d_threshold(1000);
 
-    //x,y,z�Ǹ���������꣬����������ʱ��֪����ʲô
     vector<int> pdb_aa_number;
     vector<double> coord_x;
     vector<double> coord_y;
@@ -34,12 +31,9 @@ double **distanceMatrix(string filename1, int *nb_row) {
     int **aa_contact_map;
     int *degree;
 
-    //��������Ҫ����Ķ������������
     double **aa_dist_mat;
 
-    //�ڶ���׼����ʼ����
 
-    //����PDB�ļ�
     ifstream pdb_file;
     pdb_file.open(filename.c_str());
     if (!pdb_file.is_open()) {
@@ -48,7 +42,6 @@ double **distanceMatrix(string filename1, int *nb_row) {
         exit(0);
     }
 
-    //һ����ʱ��֪����ʲô�Ĳ���
     char aa_name[16];
     char at_name[16];
     char at_number[16];
@@ -69,7 +62,6 @@ double **distanceMatrix(string filename1, int *nb_row) {
     bool found_cb = false;
     bool read_chain = false;
 
-    //��ʱ��֪���ڸ����һ��
     while (pdb_file.getline(buffer, 1024)) {
 
         strncpy(aa_name, buffer + 17, 3);
@@ -210,8 +202,6 @@ double **distanceMatrix(string filename1, int *nb_row) {
             }
         }
     }
-
-    //����һ�¾�������
 
     return aa_dist_mat;
 }

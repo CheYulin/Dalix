@@ -1,8 +1,10 @@
-#include <iostream>
-#include <math.h>
-#include <sys/timeb.h>
-#include "split.h"
 #include "omp.h"
+#include <sys/timeb.h>
+
+#include <cmath>
+#include <iostream>
+
+#include "split.h"
 
 using namespace std;
 

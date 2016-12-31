@@ -1,4 +1,4 @@
-#include <math.h>
+#include <cmath>
 
 double edge_dali_ae(double **row_mat, double **col_mat, int i, int k, int j, int l);
 
